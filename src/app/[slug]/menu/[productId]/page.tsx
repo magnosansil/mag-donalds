@@ -1,5 +1,6 @@
 import { getProductById } from "@/data/getProductById";
 
+import ProductDetails from "./components/product-details";
 import ProductHeader from "./components/product-header";
 
 interface ProductPageProps {
@@ -7,17 +8,13 @@ interface ProductPageProps {
 }
 const ProductPage = async ({ params }: ProductPageProps) => {
   const { slug, productId } = await params;
-  const product = await getProductById(productId);
+  const product = await getProductById(productId, slug);
 
   return (
-    <>
-      <div className="relative h-[300px] w-full">
-        <ProductHeader product={product} />
-      </div>
-      <h1>Product Page</h1>
-      {slug}
-      {product.name}
-    </>
+    <div className="flex h-full flex-col">
+      <ProductHeader product={product} />
+      <ProductDetails product={product} />
+    </div>
   );
 };
 
