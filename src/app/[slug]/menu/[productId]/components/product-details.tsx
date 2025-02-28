@@ -93,7 +93,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
             </div>
 
             <div className="mt-6 space-y-3">
-              <div className="items-center-gap-1 flex">
+              <div className="flex items-center gap-1">
                 <ChefHatIcon size={18} />
                 <h4 className="font-semibold">Ingredientes</h4>
               </div>
