@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ hostname: "u9a6wmr3as.ufs.sh" }],
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/mag-donalds",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
