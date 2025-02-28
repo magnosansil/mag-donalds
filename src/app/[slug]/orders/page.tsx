@@ -1,6 +1,6 @@
 import { db } from "@/lib/prisma";
 
-import { isValidCPF, removeCpfPonctuation } from "../menu/helpers/cpf";
+import { isValidCPF, removeCpfPunctiation } from "../menu/helpers/cpf";
 import CpfForm from "./components/cpf-form";
 import OrderList from "./components/order-list";
 
@@ -19,7 +19,7 @@ const OrdersPage = async ({ searchParams }: OrderPageProps) => {
       createdAt: "desc",
     },
     where: {
-      customerCpf: removeCpfPonctuation(cpf),
+      customerCpf: removeCpfPunctiation(cpf),
     },
     include: {
       restaurant: {
